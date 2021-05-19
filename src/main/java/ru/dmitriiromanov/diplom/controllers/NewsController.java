@@ -1,5 +1,7 @@
 package ru.dmitriiromanov.diplom.controllers;
 
+import org.apache.el.stream.Stream;
+import org.hibernate.mapping.Collection;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +12,8 @@ import ru.dmitriiromanov.diplom.models.NewsModel;
 import ru.dmitriiromanov.diplom.repository.NewsRepository;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -24,8 +28,12 @@ public class NewsController {
 
     @GetMapping("/news")
     public String news(Model model) {
-        Iterable<NewsModel> newsModels = newsRepository.findAll();
-        model.addAttribute("news", newsModels);
+//        Iterable<NewsModel> newsModels = newsRepository.findAll();
+//        model.addAttribute("news", newsModels);
+        List<NewsModel> list = newsRepository.findAll();
+        List<NewsModel> arrlist = new ArrayList(list);
+        Collections.reverse(arrlist);
+        model.addAttribute("news", arrlist);
         return "news/news";
     }
 
