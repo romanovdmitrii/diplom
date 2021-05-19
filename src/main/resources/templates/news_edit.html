@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Редактирование новости</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Редактирование новости</h1>
+    <div th:each="el : ${news}">
+        <form method="post">
+            <input type="text" th:value="${el.title}" name="title" placeholder="Введите название новости" class="form-control">
+            <br>
+            <input type="text" th:value="${el.anons}" name="anons" placeholder="Анонс новости" class="form-control">
+            <br>
+            <textarea name="full_text" placeholder="Описание" class="form-control" th:text="${el.full_text}"/>
+            <br>
+            <button type="submit" class="btn btn-primary">Применить изменения</button>
+        </form>
+    </div>
+</div>
+
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
