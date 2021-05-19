@@ -26,14 +26,14 @@ public class NewsController {
     public String news(Model model) {
         Iterable<NewsModel> newsModels = newsRepository.findAll();
         model.addAttribute("news", newsModels);
-        return "news";
+        return "news/news";
     }
 
     @GetMapping("/news/add")
     public String newsAdd(Model model) {
         Iterable<NewsModel> newsModels = newsRepository.findAll();
         model.addAttribute("news", newsModels);
-        return "news_add";
+        return "news/news_add";
     }
 
     @PostMapping("/news/add")
@@ -57,7 +57,7 @@ public class NewsController {
         ArrayList<NewsModel> list = new ArrayList<>();
         newsModel.ifPresent(list::add);
         model.addAttribute("news", list);
-        return "news_details";
+        return "news/news_details";
     }
 
     @GetMapping("/news/{id}/edit")
@@ -70,7 +70,7 @@ public class NewsController {
         ArrayList<NewsModel> list = new ArrayList<>();
         newsModel.ifPresent(list::add);
         model.addAttribute("news", list);
-        return "news_edit";
+        return "news/news_edit";
     }
 
     @PostMapping("/news/{id}/edit")
