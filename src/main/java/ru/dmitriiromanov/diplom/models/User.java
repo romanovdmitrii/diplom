@@ -1,6 +1,7 @@
 package ru.dmitriiromanov.diplom.models;
 
 import lombok.Data;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -12,6 +13,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@ToString
 @Table(name = "usr")
 public class User implements UserDetails {
     @Id
@@ -20,11 +22,18 @@ public class User implements UserDetails {
     private String username;
     private String password;
     private boolean active;
+    //private boolean admin;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
+
+    public static boolean roleAdmin(String str, String str1) {
+        return !(str.equals(str1));
+
+        //return user.getRoles().contains(Role.ADMIN);
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

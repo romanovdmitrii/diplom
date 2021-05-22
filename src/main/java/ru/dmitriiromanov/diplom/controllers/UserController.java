@@ -2,11 +2,9 @@ package ru.dmitriiromanov.diplom.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import ru.dmitriiromanov.diplom.models.NewsModel;
+import ru.dmitriiromanov.diplom.models.Role;
 import ru.dmitriiromanov.diplom.models.User;
 import ru.dmitriiromanov.diplom.repository.UserRepository;
 
@@ -40,6 +38,7 @@ public class UserController {
         ArrayList<User> list = new ArrayList<>();
         user.ifPresent(list::add);
         model.addAttribute("users", list);
+        model.addAttribute("roles", Role.values());
         return "users/users_edit";
     }
 

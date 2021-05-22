@@ -13,9 +13,26 @@
     <h1>Редактирование пользователя</h1>
     <div th:each="el : ${users}">
         <form method="post">
-            <input type="text" th:value="${el.username}" name="username" placeholder="Введите логин" class="form-control">
+            <input type="text" th:value="${el.username}" name="username" placeholder="Введите логин"
+                   class="form-control">
             <br>
-            <input type="text" th:value="${el.password}" name="password" placeholder="Введите пароль" class="form-control">
+            <input type="text" th:value="${el.password}" name="password" placeholder="Введите пароль"
+                   class="form-control">
+            <br>
+            <table>
+                <tr th:each="role : ${roles}">
+
+                        <div class="ui checkbox">
+                            <input type="checkbox" name="role" th:checked="${el.roleAdmin(role, el.roles)}">
+                            <label th:text="${role}"></label>
+                        </div>
+
+                </tr>
+            </table>
+            <!--<div th:each="token : ${el.getRoles()}">
+                <input type="checkbox" name="role">
+                <p th:text="${token.toString()}"></p>
+            </div>-->
             <br>
             <button type="submit" class="btn btn-primary">Применить изменения</button>
         </form>
