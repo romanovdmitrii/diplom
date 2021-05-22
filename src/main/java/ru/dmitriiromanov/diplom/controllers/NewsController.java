@@ -28,12 +28,9 @@ public class NewsController {
 
     @GetMapping("/news")
     public String news(Model model) {
-//        Iterable<NewsModel> newsModels = newsRepository.findAll();
-//        model.addAttribute("news", newsModels);
         List<NewsModel> list = newsRepository.findAll();
-        List<NewsModel> arrlist = new ArrayList(list);
-        Collections.reverse(arrlist);
-        model.addAttribute("news", arrlist);
+        Collections.reverse(list);
+        model.addAttribute("news", list);
         return "news/news";
     }
 

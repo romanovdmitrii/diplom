@@ -1,22 +1,58 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <head>
     <title>Spring Security Example </title>
+    <style>
+        .my__form {
+            display: inline-block;
+            margin-left: 15px;
+        }
+    </style>
 </head>
-<body>
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
-<h1>Login page</h1>
+<header th:insert="blocks/header :: header"></header>
+<br>
+<h1>Авторизация</h1> <br>
+<body class="text-center">
+<!--<main class="form-signin">
+    <form>
+        <div>
+        <div class="form-group row" >
+            <label class="col-sm-2 col-form-label ml-20"> Логин :</label>
+            <div class="col-sm-4">
+                <input type="text" name="username" class="form-control" placeholder="Введите логин"/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label ml-20"> Пароль :</label>
+            <div class="col-sm-4">
+                <input type="password" name="password" class="form-control" placeholder="Введите пароль"/>
+            </div>
+        </div>
+        </div>
+            <a href="/registration">Зарегистрироваться</a>
+            <button class="btn btn-primary ml-5" type="submit"> Войти</button>
+
+    </form>
+</main>-->
+
 <form th:action="@{/login}" method="post">
     <div><label> User Name : <input type="text" name="username"/> </label></div>
     <div><label> Password: <input type="password" name="password"/> </label></div>
     <div><input type="submit" value="Sign In"/></div>
 </form>
 <a href="/registration"> add new user </a>
+
+<br><br><br>
+
+<!--<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>-->
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 </body>
 </html>
