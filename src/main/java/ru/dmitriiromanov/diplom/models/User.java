@@ -21,19 +21,18 @@ public class User implements UserDetails {
     private Long id;
     private String username;
     private String password;
-    private boolean active;
-    //private boolean admin;
+    private String phone;
+    private boolean admin;
 
     @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
 
-    public static boolean roleAdmin(String str, String str1) {
-        return !(str.equals(str1));
-
+    /*public static boolean isAdmin() {
+        return false;
         //return user.getRoles().contains(Role.ADMIN);
-    }
+    }*/
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -57,6 +56,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return isActive();
+        return true;
     }
 }

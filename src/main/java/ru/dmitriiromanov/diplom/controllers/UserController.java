@@ -1,18 +1,21 @@
 package ru.dmitriiromanov.diplom.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.dmitriiromanov.diplom.models.NewsModel;
 import ru.dmitriiromanov.diplom.models.Role;
 import ru.dmitriiromanov.diplom.models.User;
 import ru.dmitriiromanov.diplom.repository.UserRepository;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Optional;
 import java.util.function.Supplier;
 
 @Controller
+//@PreAuthorize("hasAuthority('ADMIN')")
+//@Secured("ADMIN")
 public class UserController {
 
     private final UserRepository userRepository;
@@ -38,16 +41,18 @@ public class UserController {
         ArrayList<User> list = new ArrayList<>();
         user.ifPresent(list::add);
         model.addAttribute("users", list);
-        model.addAttribute("roles", Role.values());
+        model.addAttribute("roles", Role.ADMIN);
         return "users/users_edit";
     }
 
     @PostMapping("/users/{id}/edit")
+//    @PreAuthorize("hasAuthority('ADMIN')")
     public String blogUserEdit(
             @PathVariable(value = "id") long id,
             @RequestParam String username,
             @RequestParam String password,
-            //@RequestParam String full_text,
+            @RequestParam String phone,
+            @RequestParam(required = false) boolean roleAdmin,
             Model model) {
 
         User user = null;
@@ -65,7 +70,10 @@ public class UserController {
 
         user.setUsername(username);
         user.setPassword(password);
-        //user.setFull_text(full_text);
+        user.setPhone(phone);
+//        if (roleAdmin)
+//            user.setRoles(Collections.singleton(Role.ADMIN));
+        user.setAdmin(roleAdmin);
         userRepository.save(user);
         return "redirect:/users";
     }

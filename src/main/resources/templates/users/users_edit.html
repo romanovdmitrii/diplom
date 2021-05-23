@@ -19,14 +19,16 @@
             <input type="text" th:value="${el.password}" name="password" placeholder="Введите пароль"
                    class="form-control">
             <br>
+            <input type="text" th:value="${el.phone}" name="phone" placeholder="Введите номер телефона"
+                   class="form-control">
+            <!--            <p th:text="${el}"/>-->
+            <br>
             <table>
                 <tr th:each="role : ${roles}">
-
-                        <div class="ui checkbox">
-                            <input type="checkbox" name="role" th:checked="${el.roleAdmin(role, el.roles)}">
-                            <label th:text="${role}"></label>
-                        </div>
-
+                    <div class="ui checkbox">
+                        <input type="checkbox" name="roleAdmin" th:checked="${el.isAdmin()}">
+                        <label th:text="${role}"></label>
+                    </div>
                 </tr>
             </table>
             <!--<div th:each="token : ${el.getRoles()}">

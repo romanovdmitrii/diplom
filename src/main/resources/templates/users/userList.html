@@ -12,7 +12,9 @@
 <div class="container mt-5">
     <div th:each="el : ${users}" class="alert alert-info mt-2">
         <h3 th:text="${el.username}"/>
-<!--        <p th:text="${el.password}"/>-->
+
+        <h5 th:text="${el.phone}"/>
+        <!--        <p th:text="${el.password}"/>-->
         <p th:text="${el.roles}"/>
         <a th:href="'/users/' + ${el.id} + '/edit'" class="btn btn-warning"> Редактировать </a>
     </div>
