@@ -15,7 +15,6 @@ public class NewsModel {
     private Long id;
 
     private String title, anons, full_text;
-    private int views;
 
     public NewsModel() {
     }
