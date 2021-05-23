@@ -14,12 +14,11 @@
         <h3 th:text="${el.username}"/>
 
         <h5 th:text="${el.phone}"/>
-        <!--        <p th:text="${el.password}"/>-->
+
         <p th:text="${el.roles}"/>
         <a th:href="'/users/' + ${el.id} + '/edit'" class="btn btn-warning"> Редактировать </a>
     </div>
 </div>
-
 
 </body>
 </html>

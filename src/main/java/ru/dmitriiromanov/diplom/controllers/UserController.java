@@ -1,23 +1,23 @@
 package ru.dmitriiromanov.diplom.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import ru.dmitriiromanov.diplom.models.NewsModel;
 import ru.dmitriiromanov.diplom.models.Role;
 import ru.dmitriiromanov.diplom.models.User;
 import ru.dmitriiromanov.diplom.repository.UserRepository;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Optional;
 import java.util.function.Supplier;
 
 @Controller
 @PreAuthorize("hasAuthority('ADMIN')")
-//@Secured("ADMIN")
 public class UserController {
 
     private final UserRepository userRepository;
@@ -81,6 +81,29 @@ public class UserController {
         }
         user.setAdmin(roleAdmin);
         userRepository.save(user);
+        return "redirect:/users";
+    }
+
+    @PostMapping("/users/{id}/delete")
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public String userDelete(
+            @PathVariable(value = "id") long id,
+            Model model
+    ) {
+        User user = null;
+        try {
+            user = userRepository.findById(id).orElseThrow(new Supplier<Throwable>() {
+                @Override
+                public Throwable get() {
+                    return null;
+                }
+            });
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+            System.out.println("Пользователь не найдена");
+        }
+        assert user != null;
+        userRepository.delete(user);
         return "redirect:/users";
     }
 }

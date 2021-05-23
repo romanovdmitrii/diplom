@@ -4,8 +4,6 @@ import lombok.Data;
 import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import ru.dmitriiromanov.diplom.repository.UserRepository;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -28,11 +26,6 @@ public class User implements UserDetails {
     @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
     @Enumerated(EnumType.STRING)
     private Set<Role> roles;
-
-    /*public static boolean isAdmin() {
-        return false;
-        //return user.getRoles().contains(Role.ADMIN);
-    }*/
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

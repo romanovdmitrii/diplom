@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequiredArgsConstructor
 public class MyErrorController implements ErrorController {
 
-    private final MainController mainController;
-
     @RequestMapping("/error")
     public String home(Model model) {
         System.out.println("ALARM");
