@@ -2,6 +2,7 @@ package ru.dmitriiromanov.diplom.controllers;
 
 import org.apache.el.stream.Stream;
 import org.hibernate.mapping.Collection;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,6 +36,7 @@ public class NewsController {
     }
 
     @GetMapping("/news/add")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String newsAdd(Model model) {
         Iterable<NewsModel> newsModels = newsRepository.findAll();
         model.addAttribute("news", newsModels);
@@ -42,6 +44,7 @@ public class NewsController {
     }
 
     @PostMapping("/news/add")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String blogNewsAdd(
             @RequestParam String title,
             @RequestParam String anons,
@@ -66,6 +69,7 @@ public class NewsController {
     }
 
     @GetMapping("/news/{id}/edit")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String newsEdit(@PathVariable(value = "id") long id, Model model) {
         if (!newsRepository.existsById(id)) {
             return "redirect:/news";
@@ -79,6 +83,7 @@ public class NewsController {
     }
 
     @PostMapping("/news/{id}/edit")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String blogNewsEdit(
             @PathVariable(value = "id") long id,
             @RequestParam String title,
@@ -107,6 +112,7 @@ public class NewsController {
     }
 
     @PostMapping("/news/{id}/delete")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public String blogNewsDelete(
             @PathVariable(value = "id") long id,
             Model model

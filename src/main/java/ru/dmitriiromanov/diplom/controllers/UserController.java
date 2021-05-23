@@ -1,6 +1,7 @@
 package ru.dmitriiromanov.diplom.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +16,7 @@ import java.util.Optional;
 import java.util.function.Supplier;
 
 @Controller
-//@PreAuthorize("hasAuthority('ADMIN')")
+@PreAuthorize("hasAuthority('ADMIN')")
 //@Secured("ADMIN")
 public class UserController {
 
@@ -33,7 +34,6 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}/edit")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public String userEdit(@PathVariable(value = "id") long id, Model model) {
         if (!userRepository.existsById(id)) {
             return "redirect:/users";
@@ -48,7 +48,6 @@ public class UserController {
     }
 
     @PostMapping("/users/{id}/edit")
-    @PreAuthorize("hasAuthority('ADMIN')")
     public String blogUserEdit(
             @PathVariable(value = "id") long id,
             @RequestParam String username,
