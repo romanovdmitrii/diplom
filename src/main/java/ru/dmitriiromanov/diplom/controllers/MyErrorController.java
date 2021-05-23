@@ -16,7 +16,8 @@ public class MyErrorController implements ErrorController {
     @RequestMapping("/error")
     public String home(Model model) {
         System.out.println("ALARM");
-        return mainController.home(model);
+        //return mainController.home(model);
+        return "redirect:/users";
     }
 
     @Override
