@@ -71,8 +71,13 @@ public class UserController {
         user.setUsername(username);
         user.setPassword(password);
         user.setPhone(phone);
-//        if (roleAdmin)
-//            user.setRoles(Collections.singleton(Role.ADMIN));
+        if (roleAdmin) {
+            user.getRoles().add(Role.ADMIN);
+        } else {
+            if (user.getRoles().contains(Role.ADMIN)) {
+                user.getRoles().remove(Role.ADMIN);
+            }
+        }
         user.setAdmin(roleAdmin);
         userRepository.save(user);
         return "redirect:/users";
