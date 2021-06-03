@@ -9,6 +9,12 @@
 <body>
 <header th:insert="blocks/header :: header"></header>
 
+<!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">-->
+<!--    <form class="form-inline" action="/news/add">-->
+<!--        <button class="btn btn-success" type="submit">Добавить новость</button>-->
+<!--    </form>-->
+<!--</nav>-->
+
 <div class="container mt-5">
     <div th:each="el : ${news}" class="alert alert-info mt-2">
         <h3 th:text="${el.title}"/>

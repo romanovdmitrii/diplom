@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>-->
+</head>
+<body>
+    <header th:insert="blocks/header :: header"></header>
+
+    <!-- cards team info -->
+    <div class="container marketing mt-3">
+        <h2 class="featurette-heading">Тренажерный зал</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild6233-3233-4838-b839-333236666666/-/cover/400x400/center/center//_.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Никита Новиков</h5>
+                        <p class="card-text">Персональный тренер тренажерного зала</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild6465-3533-4638-a164-613664623738/-/cover/400x400/center/center//_.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Сергей Попов</h5>
+                        <p class="card-text">Супервайзер тренажерного зала, мастер-тренер</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3434-3466-4435-b761-613565333631/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Георгий Карачаушев</h5>
+                        <p class="card-text">Персональный тренер тренажерного зала</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3536-6630-4334-a230-643939323036/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Илья Малявин</h5>
+                        <p class="card-text">Фитнес - инструктор</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild6435-3764-4139-b563-326461333633/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Евгений Даниленков</h5>
+                        <p class="card-text">Персональный тренер тренажерного зала</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3861-3161-4462-a430-373932376532/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Алена Шевченко</h5>
+                        <p class="card-text">Мастер - тренер тренажерного зала</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3935-6330-4166-b530-653661313433/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Мария Петрова</h5>
+                        <p class="card-text">Персональный тренер тренажерного зала</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3430-3532-4162-b637-633265613663/-/cover/400x400/center/center//_.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Александр Попов</h5>
+                        <p class="card-text">Тренер по настольному теннису</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild6333-6538-4532-a539-313766613464/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Алексей Ламтев</h5>
+                        <p class="card-text">Тренер по боксу</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="featurette-heading mt-3">Детский клуб</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3963-6362-4534-b865-326262343138/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Анна Рябикова</h5>
+                        <p class="card-text">Супервайзер детского клуба, мастер-тренер</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild6136-6636-4138-b764-313033353533/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Наталья Зинкевич</h5>
+                        <p class="card-text">Мастер-тренер</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild6233-3439-4165-a231-313463373064/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Екатерина Страшилина</h5>
+                        <p class="card-text">Мастер тренер</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="featurette-heading mt-3" >Бассейн</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3962-6464-4434-a135-663734383561/-/cover/400x400/center/center//_.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Александра Бабенко</h5>
+                        <p class="card-text">Мастер-тренер водных программ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3363-3632-4432-a266-333735643061/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Алексей Павленко</h5>
+                        <p class="card-text">Мастер-тренер водных программ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <img src="https://thumb.tildacdn.com/tild3936-3037-4734-b161-373237353137/-/cover/400x400/center/center//photo.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Сергей Тучкин</h5>
+                        <p class="card-text">Персональный тренер водных программ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- team info end -->
+    <div th:insert="blocks/footer :: footer"></div>
+
+    </body>
+</html>
