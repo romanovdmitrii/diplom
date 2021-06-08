@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Тренерский состав</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5">
+    <div th:each="el : ${coaches}" class="alert alert-info mt-2">
+        <h3 th:text="${el.name}"/>
+        <h3 th:text="${el.lastname}"/>
+        <h3 th:text="${el.phone}"/>
+        <h3 th:text="${el.position}"/>
+        <h3 th:text="${el.description}"/>
+
+        <a th:href="'/coaches/' + ${el.id} + '/edit'" class="btn btn-warning mt-1"> Редактировать </a>
+    </div>
+</div>
+
+</body>
+</html>

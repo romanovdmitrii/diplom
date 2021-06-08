@@ -24,12 +24,11 @@ public class Coach {
     public Coach(){
     }
 
-    public Coach(Long id, String position, String name, String lastname, String phone, String description) {
-        this.id = id;
-        this.position = position;
+    public Coach(String name, String lastname, String phone, String position,  String description) {
         this.name = name;
         this.lastname = lastname;
         this.phone = phone;
+        this.position = position;
         this.description = description;
     }
 }

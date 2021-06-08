@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>-->
+    <style>
+        .my__form {
+            display: inline-block;
+            margin-left: 15px;
+        }
+    </style>
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
@@ -31,6 +37,7 @@
                     <h5 class="card-title">Редактирование новостей</h5>
                     <p class="card-text">Для добавления, изменения, удаление новистей в разделе "Новости"</p>
                     <a href="/news" class="btn btn-primary">Редактировать</a>
+                    <a href="/news/add" class="btn btn-primary my__form">Добавить новость</a>
                 </div>
             </div>
         </div>
@@ -48,7 +55,8 @@
                 <div class="card-body">
                     <h5 class="card-title">БД тренерского состава</h5>
                     <p class="card-text">Информация о тренерах, контактная информация, телефон, описание, занимаемая должность</p>
-                    <a href="#" class="btn btn-primary">Посмотреть</a>
+                    <a href="/coaches" class="btn btn-primary">Посмотреть</a>
+                    <a href="/coaches/add" class="btn btn-primary my__form">Добавить тренера</a>
                 </div>
             </div>
         </div>

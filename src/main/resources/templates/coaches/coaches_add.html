@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Тренера</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Добавление тренера</h1>
+    <form action="/coaches/add" method="post">
+        <input type="text" name="name" placeholder="Введите имя"
+               class="form-control">
+        <br>
+        <input type="text" name="lastname" placeholder="Введите фамилия"
+               class="form-control">
+        <br>
+        <input type="text" name="phone" placeholder="Введите номер телефона"
+               class="form-control">
+        <br>
+        <input type="text" name="position" placeholder="Введите должность"
+               class="form-control">
+        <br>
+        <input type="text" name="description" placeholder="Введите описание"
+               class="form-control">
+        <br>
+
+        <button type="submit" class="btn btn-primary">Добавить тренера</button>
+
+    </form>
+</div>
+</body>
+</html>

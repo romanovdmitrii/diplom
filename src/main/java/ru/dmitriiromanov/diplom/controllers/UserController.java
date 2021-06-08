@@ -100,7 +100,7 @@ public class UserController {
             });
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-            System.out.println("Пользователь не найдена");
+            System.out.println("Пользователь не найден");
         }
         assert user != null;
         userRepository.delete(user);

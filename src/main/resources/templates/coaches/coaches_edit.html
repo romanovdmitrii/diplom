@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Редактирование пользователя</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="blocks/header :: header"></header>
+
+<div class="container mt-5 mb-5">
+    <h1>Редактирование тренера</h1>
+    <div th:each="el : ${coach}">
+        <form method="post">
+            <input type="text" th:value="${el.name}" name="name" placeholder="Введите имя"
+                   class="form-control">
+            <br>
+            <input type="text" th:value="${el.lastname}" name="lastname" placeholder="Введите фамилия"
+                   class="form-control">
+            <br>
+            <input type="text" th:value="${el.phone}" name="phone" placeholder="Введите номер телефона"
+                   class="form-control">
+            <br>
+            <input type="text" th:value="${el.position}" name="position" placeholder="Введите должность"
+                   class="form-control">
+            <br>
+            <input type="text" th:value="${el.description}" name="description" placeholder="Введите описание"
+                   class="form-control">
+            <br>
+
+            <button type="submit" class="btn btn-primary">Применить изменения</button>
+
+        </form>
+        <br>
+        <form th:action="'/coaches/' + ${el.id} + '/delete'" method="post">
+            <button class="btn btn-warning" type="submit">Удалить</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
