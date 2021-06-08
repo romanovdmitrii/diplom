@@ -9,6 +9,60 @@
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-<h1>Admin panel</h1>
+<br>
+<div align="center"><p>
+    <h1>Панель администрации</h1>
+    </p>
+</div>
+<div class="container marketing mt-3">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Заявки с формы обратной связи</h5>
+                    <p class="card-text">Для просмотра заявок поступивших с формы обратной связи на главной странице сайта</p>
+                    <a href="/contact" class="btn btn-primary">Перейти к просмотру</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Редактирование новостей</h5>
+                    <p class="card-text">Для добавления, изменения, удаление новистей в разделе "Новости"</p>
+                    <a href="/news" class="btn btn-primary">Редактировать</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Редактирование пользователей</h5>
+                    <p class="card-text">Для просмотра списка зарегистрированных пользователей и его редактирования</p>
+                    <a href="/users" class="btn btn-primary">Редактировать</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">БД тренерского состава</h5>
+                    <p class="card-text">Информация о тренерах, контактная информация, телефон, описание, занимаемая должность</p>
+                    <a href="#" class="btn btn-primary">Посмотреть</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Разлогиниться</h5>
+                    <p class="card-text">Для повторного входа в панель администрации, потребуется заного ввести логин и пароль</p>
+                    <a href="/logout" class="btn btn-primary">Выйти</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
 </body>
 </html>
