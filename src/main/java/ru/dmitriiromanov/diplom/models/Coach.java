@@ -21,10 +21,10 @@ public class Coach {
     private String phone;
     private String description;
 
-    public Coach(){
+    public Coach() {
     }
 
-    public Coach(String name, String lastname, String phone, String position,  String description) {
+    public Coach(String name, String lastname, String phone, String position, String description) {
         this.name = name;
         this.lastname = lastname;
         this.phone = phone;

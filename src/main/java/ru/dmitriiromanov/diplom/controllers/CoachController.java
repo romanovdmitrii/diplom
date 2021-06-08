@@ -8,9 +8,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.dmitriiromanov.diplom.models.Coach;
-import ru.dmitriiromanov.diplom.models.NewsModel;
-import ru.dmitriiromanov.diplom.models.Role;
-import ru.dmitriiromanov.diplom.models.User;
 import ru.dmitriiromanov.diplom.repository.CoachRepository;
 
 import java.util.ArrayList;

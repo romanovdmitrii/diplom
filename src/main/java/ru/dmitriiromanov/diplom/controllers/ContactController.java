@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.dmitriiromanov.diplom.models.Contact;
-import ru.dmitriiromanov.diplom.models.NewsModel;
 import ru.dmitriiromanov.diplom.repository.ContactRepository;
 
 import java.util.Collections;

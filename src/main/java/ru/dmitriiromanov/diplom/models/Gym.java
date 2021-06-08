@@ -18,7 +18,7 @@ public class Gym {
     private String name;
     private String description;
 
-    public Gym(){
+    public Gym() {
     }
 
     public Gym(Long id, String name, String description) {

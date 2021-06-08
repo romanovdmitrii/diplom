@@ -20,7 +20,7 @@ public class Training {
     private String description;
     private String gym;
 
-    public Training(){
+    public Training() {
     }
 
     public Training(Long id, String name, String coach, String description, String gym) {
